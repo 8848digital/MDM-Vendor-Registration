@@ -1,0 +1,278 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2023-12-26 11:11:28.475530",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "company_name",
+  "company_type",
+  "company_registration_number",
+  "column_break_u01h0",
+  "about_company",
+  "date_of_establishment",
+  "company_name_as_per_mca_records",
+  "dun_and_bradstreet_ndi_number",
+  "company_logo",
+  "column_break_rg0f8",
+  "company_turnover",
+  "national_small_scale_industries_registration_number",
+  "iso_9001_2000",
+  "iso_4000",
+  "has_18000",
+  "any_other_certification",
+  "name_of_the_certification",
+  "pan_details_tab",
+  "pan_number",
+  "verify_pan",
+  "company_type_as_per_pan",
+  "pan_applicable",
+  "name_of_the_company_fetched_as_per_pan",
+  "column_break_kuxns",
+  "persons_name",
+  "llp_number",
+  "gst_details_tab",
+  "gst_details",
+  "gst_applicable",
+  "gst_number",
+  "gst_category",
+  "gst_valid_from",
+  "regd_address_as_per_gstin",
+  "regd_email_as_per_gstin",
+  "regd_phone_number_as_per_gstin",
+  "gst_valid_till",
+  "contact_details",
+  "contact",
+  "test_1"
+ ],
+ "fields": [
+  {
+   "fieldname": "company_name",
+   "fieldtype": "Small Text",
+   "label": "Company Name"
+  },
+  {
+   "fieldname": "company_type",
+   "fieldtype": "Select",
+   "label": "Company Type",
+   "options": "M/S\nLimited Liability Partnership\nPrivate Limited\nPublic Listed"
+  },
+  {
+   "fieldname": "about_company",
+   "fieldtype": "Small Text",
+   "label": "About Company"
+  },
+  {
+   "fieldname": "date_of_establishment",
+   "fieldtype": "Date",
+   "label": "Date Of Establishment"
+  },
+  {
+   "fieldname": "company_name_as_per_mca_records",
+   "fieldtype": "Data",
+   "label": "Company Name (as per MCA Records)"
+  },
+  {
+   "fieldname": "dun_and_bradstreet_ndi_number",
+   "fieldtype": "Data",
+   "label": "Dun and Bradstreet NDI Number"
+  },
+  {
+   "fieldname": "company_logo",
+   "fieldtype": "Attach Image",
+   "label": "Company Logo"
+  },
+  {
+   "fieldname": "company_turnover",
+   "fieldtype": "Select",
+   "label": "Company Turnover",
+   "options": "Select\n>2,50,00,00,000\n<2,50,00,00,000\n>75,00,00,000\n<5,00,00,000"
+  },
+  {
+   "fieldname": "national_small_scale_industries_registration_number",
+   "fieldtype": "Data",
+   "label": "National Small Scale Industries Registration Number"
+  },
+  {
+   "default": "0",
+   "fieldname": "iso_9001_2000",
+   "fieldtype": "Check",
+   "label": "ISO 9001 2000"
+  },
+  {
+   "default": "0",
+   "fieldname": "iso_4000",
+   "fieldtype": "Check",
+   "label": "ISO 4000"
+  },
+  {
+   "default": "0",
+   "fieldname": "has_18000",
+   "fieldtype": "Check",
+   "label": "HAS 18000"
+  },
+  {
+   "default": "0",
+   "fieldname": "any_other_certification",
+   "fieldtype": "Check",
+   "label": "Any Other Certification"
+  },
+  {
+   "fieldname": "name_of_the_certification",
+   "fieldtype": "Data",
+   "label": "Name of the Certification"
+  },
+  {
+   "fieldname": "pan_details_tab",
+   "fieldtype": "Tab Break",
+   "label": "Pan Details"
+  },
+  {
+   "fieldname": "pan_number",
+   "fieldtype": "Data",
+   "label": "Pan Number"
+  },
+  {
+   "fieldname": "company_type_as_per_pan",
+   "fieldtype": "Select",
+   "label": "Company Type as per PAN",
+   "options": "Individual\nCompany\nHUF\nGovernment"
+  },
+  {
+   "default": "0",
+   "fieldname": "pan_applicable",
+   "fieldtype": "Check",
+   "label": "PAN Applicable"
+  },
+  {
+   "fieldname": "name_of_the_company_fetched_as_per_pan",
+   "fieldtype": "Data",
+   "label": "Name of the Company fetched as per PAN"
+  },
+  {
+   "fieldname": "persons_name",
+   "fieldtype": "Data",
+   "label": "Person's Name "
+  },
+  {
+   "fieldname": "llp_number",
+   "fieldtype": "Data",
+   "label": "LLP Number "
+  },
+  {
+   "fieldname": "gst_details",
+   "fieldtype": "Data",
+   "label": "GST Details"
+  },
+  {
+   "fieldname": "gst_applicable",
+   "fieldtype": "Data",
+   "label": "GST Applicable"
+  },
+  {
+   "fieldname": "gst_number",
+   "fieldtype": "Data",
+   "label": "GST Number"
+  },
+  {
+   "fieldname": "gst_category",
+   "fieldtype": "Select",
+   "label": "GST Category",
+   "options": "Select\nRegistered Regular\nUnregistered\nSEZ\nGovernment"
+  },
+  {
+   "fieldname": "gst_valid_from",
+   "fieldtype": "Date",
+   "label": "GST Valid From"
+  },
+  {
+   "fieldname": "regd_address_as_per_gstin",
+   "fieldtype": "Data",
+   "label": "Regd. Address as per GSTIN"
+  },
+  {
+   "fieldname": "regd_email_as_per_gstin",
+   "fieldtype": "Data",
+   "label": "Regd. Email As per GSTIN"
+  },
+  {
+   "fieldname": "regd_phone_number_as_per_gstin",
+   "fieldtype": "Data",
+   "label": "Regd. Phone Number as per GSTIN"
+  },
+  {
+   "fieldname": "gst_valid_till",
+   "fieldtype": "Data",
+   "label": "GST Valid Till"
+  },
+  {
+   "fieldname": "contact_details",
+   "fieldtype": "Data",
+   "label": "Contact Details"
+  },
+  {
+   "fieldname": "contact",
+   "fieldtype": "Table",
+   "label": "contact",
+   "options": "Contact Person"
+  },
+  {
+   "fieldname": "company_registration_number",
+   "fieldtype": "Data",
+   "label": "Company Registration Number"
+  },
+  {
+   "fieldname": "gst_details_tab",
+   "fieldtype": "Tab Break",
+   "label": "GST Details Tab"
+  },
+  {
+   "fieldname": "column_break_kuxns",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_rg0f8",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_u01h0",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "verify_pan",
+   "fieldtype": "Button",
+   "label": "Verify Pan"
+  },
+  {
+   "fieldname": "test_1",
+   "fieldtype": "Button",
+   "label": "test button"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-12-26 16:05:15.130295",
+ "modified_by": "Administrator",
+ "module": "Mdm Vendor Registration",
+ "name": "Company Details",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
