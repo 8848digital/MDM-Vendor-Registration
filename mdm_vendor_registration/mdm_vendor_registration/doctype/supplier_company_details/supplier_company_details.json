@@ -8,11 +8,13 @@
  "engine": "InnoDB",
  "field_order": [
   "company_name",
+  "company_name_verified",
   "company_type",
   "company_registration_number",
   "column_break_u01h0",
   "about_company",
   "date_of_establishment",
+  "verified_date_of_establishment",
   "company_name_as_per_mca_records",
   "dun_and_bradstreet_ndi_number",
   "company_logo",
@@ -26,6 +28,7 @@
   "name_of_the_certification",
   "pan_details_tab",
   "pan_number",
+  "pan_verified",
   "verify_pan",
   "company_type_as_per_pan",
   "pan_applicable",
@@ -70,6 +73,7 @@
    "label": "Date Of Establishment"
   },
   {
+   "description": "This field will only be auto-fetched in case MCA APIs are enabled in MDM Settings. In case the APIs are disabled this field will not be visible",
    "fieldname": "company_name_as_per_mca_records",
    "fieldtype": "Data",
    "label": "Company Name (as per MCA Records)"
@@ -249,14 +253,35 @@
    "fieldname": "test_1",
    "fieldtype": "Button",
    "label": "test button"
+  },
+  {
+   "default": "0",
+   "description": "You must manually verify the details in case you have not enabled MCA APIs in MDM Settings",
+   "fieldname": "company_name_verified",
+   "fieldtype": "Check",
+   "label": "Company Name Verified"
+  },
+  {
+   "default": "0",
+   "description": "You must manually verify the details in case you have not enabled MCA APIs in MDM Settings",
+   "fieldname": "verified_date_of_establishment",
+   "fieldtype": "Check",
+   "label": "Verified Date of Establishment"
+  },
+  {
+   "default": "0",
+   "description": "You must manually verify the details in case you have not enabled PAN APIs in MDM Settings.",
+   "fieldname": "pan_verified",
+   "fieldtype": "Check",
+   "label": "PAN Verified"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-12-26 16:05:15.130295",
+ "modified": "2023-12-29 13:58:27.122420",
  "modified_by": "Administrator",
  "module": "Mdm Vendor Registration",
- "name": "Company Details",
+ "name": "Supplier Company Details",
  "owner": "Administrator",
  "permissions": [
   {
