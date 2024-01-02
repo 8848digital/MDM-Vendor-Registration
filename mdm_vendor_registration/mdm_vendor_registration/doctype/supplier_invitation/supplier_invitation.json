@@ -1,0 +1,131 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-01-02 11:05:59.103635",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "supplier_company_name",
+  "name_of_the_primary_contact",
+  "email_address_of_the_primary_contact",
+  "amended_from",
+  "title",
+  "company_address_details_tab",
+  "address_title",
+  "address_line_1",
+  "address_line_2",
+  "city",
+  "district",
+  "state",
+  "pincode",
+  "country"
+ ],
+ "fields": [
+  {
+   "fieldname": "title",
+   "fieldtype": "Data",
+   "label": "Title"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Supplier Invitation",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "supplier_company_name",
+   "fieldtype": "Data",
+   "label": "Supplier Company Name"
+  },
+  {
+   "fieldname": "name_of_the_primary_contact",
+   "fieldtype": "Data",
+   "label": "Name of the Primary Contact"
+  },
+  {
+   "description": "You will not be able to edit this email address after submission.\nThis user will become the primary contact for your company.",
+   "fieldname": "email_address_of_the_primary_contact",
+   "fieldtype": "Data",
+   "label": "Email Address of the Primary Contact "
+  },
+  {
+   "fieldname": "company_address_details_tab",
+   "fieldtype": "Tab Break",
+   "label": "Company Address Details"
+  },
+  {
+   "fieldname": "address_line_1",
+   "fieldtype": "Data",
+   "label": "Address Line 1"
+  },
+  {
+   "fieldname": "address_line_2",
+   "fieldtype": "Data",
+   "label": "Address Line 2"
+  },
+  {
+   "fieldname": "city",
+   "fieldtype": "Data",
+   "label": "City"
+  },
+  {
+   "fieldname": "district",
+   "fieldtype": "Data",
+   "label": "District"
+  },
+  {
+   "fieldname": "state",
+   "fieldtype": "Data",
+   "label": "State"
+  },
+  {
+   "fieldname": "pincode",
+   "fieldtype": "Data",
+   "label": "Pincode"
+  },
+  {
+   "default": "India",
+   "fieldname": "country",
+   "fieldtype": "Data",
+   "label": "Country"
+  },
+  {
+   "description": "This will appear on the Address dropdown choice in ERPNext",
+   "fieldname": "address_title",
+   "fieldtype": "Data",
+   "label": "Address Title"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_calendar_and_gantt": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2024-01-02 11:41:20.404504",
+ "modified_by": "Administrator",
+ "module": "Mdm Vendor Registration",
+ "name": "Supplier Invitation",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
