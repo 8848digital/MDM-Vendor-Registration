@@ -34,7 +34,7 @@ app_license = "MIT"
 # Home Pages
 # ----------
 # application home page (will override Website Settings)
-# home_page = "login"
+#home_page = "signup"
 
 # website user home page (by Role)
 # role_home_page = {

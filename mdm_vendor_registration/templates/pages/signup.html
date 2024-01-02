@@ -1,75 +1,165 @@
 {% extends "templates/web.html" %}
 
-{% block title %}{{ _("Operation Card List") }}{% endblock %}
+
+{% block title %}{{ _("Signup Form") }}{% endblock %}
+
 
 {% block head_include %}
   <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
- 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
   <style>
-    /* Your CSS styles go here */
-    body, h1, h2, h3, p, input, button {
-        margin: 0;
-        padding: 0;
+    .phone-group {
+      display: flex;
+      margin-right: 1px;
+      justify-content: space-between;
+      column-gap: 7px;
+    }
+
+    #country-code {
+      border: 1px solid #ccc;
+      padding: 12px;
+      margin-bottom: 10px;
+      box-sizing: border-box;
+      border-radius: 4px;
+      width: 100px;
+      font-size: smaller;
+    }
+
+    body,
+    h1,
+    h2,
+    h3,
+    p,
+    input,
+    button {
+      margin: 0;
+      padding: 0;
     }
 
     body {
-        font-family: 'Arial', sans-serif;
-        background-color: #f4f4f4;
+      font-family: 'Open Sans', sans-serif; 
+      background-color: #fff;
     }
 
     .signup-form {
-        max-width: 400px;
-        margin: 50px auto;
-        padding: 20px;
-        background-color: #fff;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      max-width: 400px;
+      margin: 50px auto;
+      padding: 20px;
+      background-color: #f8f9fa; /* Change background color to a light gray shade */
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     }
 
     .form-group {
-        margin-bottom: 15px;
+      margin-bottom: 15px;
     }
 
     label {
-        display: block;
-        margin-bottom: 8px;
-        font-weight: bold;
+      display: block;
+      margin-bottom: 8px;
+      font-weight: bold;
+      color: #495057; /* Change label text color */
     }
 
     input {
-        width: 100%;
-        padding: 10px;
-        box-sizing: border-box;
-        margin-bottom: 10px;
-        border: 1px solid #ccc;
-        border-radius: 4px;
+      width: 100%;
+      padding: 10px;
+      box-sizing: border-box;
+      margin-bottom: 10px;
+      border: 1px solid #ced4da; /* Change border color */
+      border-radius: 4px;
+      font-size: 14px; /* Set the font size */
     }
+    .password-input {
+      flex: 1;
+    }
+   
+    .eye-icon {
+  position: absolute;
+  right: 10px;
+  cursor: pointer;
+  margin-top:10px;
+}
+
+/* Additional styles for the password input */
+.input-container {
+  position: relative;
+  flex: 1; /* Take remaining space in the flex container */
+}
+
+.input-container input {
+  padding-right: 30px; /* Space for the eye icon */
+}
+
 
     button {
-        background-color: #4caf50;
-        color: #fff;
-        padding: 10px 15px;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
+      background-color: black; /* Change button color */
+      color: #fff;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 14px; /* Set the font size */
     }
 
     button:hover {
-        background-color: #45a049;
+      background-color: #525252; /* Change button hover color */
     }
 
-    /* Additional styling for the Verify Email and Verify Phone buttons */
-    .btn-verify-email, #verify-email {
-        background-color: #3498db;
-    }
-
-    .btn-verify-email:hover, #verify-email:hover {
-        background-color: #2980b9;
+    a {
+      color: #525252; /* Change link color */
     }
   </style>
 {% endblock %}
 
+
 {% block script %}
 <script>
+     $(".eye-icon1").click(function () {
+    const passwordInput = $("#password");
+    const type = passwordInput.attr("type") === "password" ? "text" : "password";
+    passwordInput.attr("type", type);
+    const eyeIcon = $(passwordInput).next(".eye-icon");
+    eyeIcon.toggleClass("fa-eye fa-eye-slash");
+  });
+  $(".eye-icon2").click(function () {
+    const passwordInput = $("#password1");
+    const type = passwordInput.attr("type") === "password" ? "text" : "password";
+    passwordInput.attr("type", type);
+     const eyeIcon = $(passwordInput).next(".eye-icon");
+    eyeIcon.toggleClass("fa-eye fa-eye-slash");
+  });
+     $(".verify-phone").click(() => {
+        const phoneNumber  = $("#phone").val().trim();
+        if (phoneNumber.length!=10){
+            frappe.msgprint("Mobile Number Not Valid")
+        }
+        else{
+        const countryCode = $("#country-code").val().trim();
+        const phone = countryCode + phoneNumber;
+        frappe.call({
+            method: 'mdm_vendor_registration.public.py.otp.send_sms',
+            args: {
+                "to": phone
+            },
+            callback: function(r) {
+                const otp = prompt("Enter the OTP sent to your Mobile No:");
+                if (r.message.OTP==otp) {
+                    frappe.msgprint("Mobile No is  Verifed")
+                 
+                }
+                else{
+                    frappe.msgprint("Please Check Otp again")
+                }
+               
+            }
+        })
+   
+
+        }
+        
+    });
     $(".btn-verify-email").click(() => {
         const email = $("#email").val().trim();
         frappe.call({
@@ -78,61 +168,106 @@
                 "email": email
             },
             callback: function(r) {
+                if (r.message=='Email Not Valid')
+                {
+                    frappe.msgprint('Email Not Valid')
+                }
+                else{
                 const otp = prompt("Enter the OTP sent to your email:");
                 if (r.message.Context.otp==otp) {
                     frappe.msgprint("Email Verifed")
-                  
+                 
                 }
-                else{
+                else if(r.message.Context.otp!=otp && otp!=null){
                     frappe.msgprint("Please Check Otp again")
                 }
+                else{
+                    frappe.msgprint('Some Error Occured In Verification of Email')
+                }
+               
             }
+        }
         })
-        
+       
     });
     $(".btn-register").click(() => {
         const email = $("#email").val().trim();
+        const name=$('#name').val().trim();
+        const pwd=$('#password').val().trim();
+        const phone=$('#phone').val().trim();
+
+
         frappe.call({
             method: 'mdm_vendor_registration.public.py.register.register_user',
             args: {
                 "email": email,
-                "name":"Raj",
+                "name":name,
+                "mobile_no":phone,
+                "new_password":pwd,
             },
             callback: function(r) {
             }
         })
-    })  
+    })
+   
 </script>
 {% endblock %}
 
+
 {% block page_content %}
 <div class="signup-form">
-  
+   
+    <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" id="name" placeholder="Enter your name">
+    </div>
+ 
     <div class="form-group">
         <label for="email">Email:</label>
         <input type="email" id="email" placeholder="Enter your email">
     </div>
-
-    <div class="form-group">
-        <label for="password">Password:</label>
-        <input type="password" id="password" placeholder="Enter your password">
-    </div>
-
     <div class="form-group">
         <button class="btn-verify-email">Verify Email</button>
     </div>
 
     <div class="form-group">
         <label for="phone">Phone:</label>
-        <input type="text" id="phone" placeholder="Enter your phone number">
+        <div class="phone-group">
+            <select id="country-code">
+                <option value="+91">+91 (India)</option>
+                <option value="+1">+1 (United States)</option>
+                <option value="+44">+44 (United Kingdom)</option>
+            </select>
+            <input type="text" id="phone" placeholder="Enter your phone number">
+        </div>
+    </div>
+  
+    <div class="form-group">
+        <button class="verify-phone">Verify Phone</button>
     </div>
 
+
     <div class="form-group">
-        <button id="verify-email">Verify Phone</button>
+        <label for="password">Password:</label>
+        <div class="input-container">
+            <input type="password" id="password" placeholder="Enter your password">
+            <i class="fa fa-eye eye-icon1 eye-icon"></i>
+        </div>
     </div>
+    <div class="form-group">
+        <label for="password"> Confirm Password:</label>
+        <div class="input-container">
+            <input type="password" id="password1" placeholder="Enter your password again">
+            <i class="fa fa-eye eye-icon2 eye-icon"></i>
+        </div>
+    </div>
+   
 
     <div class="form-group">
         <button class="btn-register">Register</button>
+    </div>
+    <div class="form-group">
+        <a href="/login#login">Already a User?</a>
     </div>
 </div>
 {% endblock %}

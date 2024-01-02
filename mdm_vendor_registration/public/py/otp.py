@@ -2,10 +2,46 @@ import frappe
 import re
 import json 
 import random
+import requests
+
+@frappe.whitelist(allow_guest=True)
+def send_sms(to):
+    twilio_details=frappe.get_doc('Twilio Sms Settings')
+    account_sid=twilio_details.account_sid
+    auth_token=twilio_details.auth_token
+    twilio_phone_number=twilio_details.twilio_phone_number
+   
+    otp_length = 6
+    otp = "".join([f"{random.randint(0, 9)}" for _ in range(otp_length)])
+    headers = {
+        'Content-Type': 'application/x-www-form-urlencoded',
+    }
+    data = {
+        'To': to,
+        'From': twilio_phone_number,
+        'Body': f'Your Otp is {otp}',
+    }
+    auth = (account_sid, auth_token)
+
+    response = requests.post(twilio_api_url, headers=headers, data=data, auth=auth)
+
+    if response.status_code == 201:
+        frappe.msgprint(f"SMS sent: {response.json().get('sid')}")
+        return {"OTP":otp}
+    else:
+        frappe.msgprint(f"Failed to send SMS: {response.status_code}, {response.text}")
+
 @frappe.whitelist(allow_guest=True)
 def send_otp(email):
-    data=generate_otp(email)
-    return data
+    verify_email= "^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$"
+    print("email",email)
+    if re.match(verify_email,email):
+        data=generate_otp(email)
+        return data
+    else:
+        return "Email Not Valid"
+   
+   
 
 @frappe.whitelist(allow_guest=True)
 def generate_otp(username, otp=None):
