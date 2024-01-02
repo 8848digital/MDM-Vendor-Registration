@@ -1,0 +1,63 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-01-02 11:03:43.433416",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_vkhe",
+  "account_sid",
+  "auth_token",
+  "twilio_phone_number",
+  "twilio_api_url"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_vkhe",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "account_sid",
+   "fieldtype": "Data",
+   "label": "Account Sid"
+  },
+  {
+   "fieldname": "auth_token",
+   "fieldtype": "Data",
+   "label": "Auth Token"
+  },
+  {
+   "fieldname": "twilio_phone_number",
+   "fieldtype": "Data",
+   "label": "Twilio Phone Number"
+  },
+  {
+   "fieldname": "twilio_api_url",
+   "fieldtype": "Data",
+   "label": "Twilio Api Url"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "issingle": 1,
+ "links": [],
+ "modified": "2024-01-02 11:06:35.353673",
+ "modified_by": "Administrator",
+ "module": "Mdm Vendor Registration",
+ "name": "Twilio Sms Settings",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
