@@ -40,6 +40,7 @@
   "gst_details",
   "gst_applicable",
   "gst_number",
+  "verified_gst_number",
   "gst_category",
   "gst_valid_from",
   "regd_address_as_per_gstin",
@@ -48,7 +49,18 @@
   "gst_valid_till",
   "contact_details",
   "contact",
-  "test_1"
+  "test_1",
+  "address_for_primary_location_tab",
+  "address_line_1",
+  "address_line_2",
+  "city",
+  "district",
+  "state",
+  "pincode",
+  "country",
+  "address_verified",
+  "additional_addresses_tab",
+  "additional_address"
  ],
  "fields": [
   {
@@ -274,11 +286,76 @@
    "fieldname": "pan_verified",
    "fieldtype": "Check",
    "label": "PAN Verified"
+  },
+  {
+   "fieldname": "address_for_primary_location_tab",
+   "fieldtype": "Tab Break",
+   "label": "Address for Primary Location"
+  },
+  {
+   "fieldname": "address_line_1",
+   "fieldtype": "Data",
+   "label": "Address Line 1"
+  },
+  {
+   "fieldname": "address_line_2",
+   "fieldtype": "Data",
+   "label": "Address Line 2"
+  },
+  {
+   "fieldname": "city",
+   "fieldtype": "Data",
+   "label": "City"
+  },
+  {
+   "fieldname": "district",
+   "fieldtype": "Data",
+   "label": "District"
+  },
+  {
+   "fieldname": "state",
+   "fieldtype": "Data",
+   "label": "State"
+  },
+  {
+   "fieldname": "pincode",
+   "fieldtype": "Data",
+   "label": "Pincode"
+  },
+  {
+   "fieldname": "country",
+   "fieldtype": "Data",
+   "label": "Country"
+  },
+  {
+   "default": "0",
+   "description": "You must manually verify the details in case you have not enabled GST APIs in MDM Settings",
+   "fieldname": "verified_gst_number",
+   "fieldtype": "Check",
+   "label": "Verified GST Number"
+  },
+  {
+   "default": "0",
+   "description": "You must manually verify the details in case you have not enabled GST APIs in MDM Settings",
+   "fieldname": "address_verified",
+   "fieldtype": "Check",
+   "label": "Address Verified"
+  },
+  {
+   "fieldname": "additional_addresses_tab",
+   "fieldtype": "Tab Break",
+   "label": "Additional Addresses"
+  },
+  {
+   "fieldname": "additional_address",
+   "fieldtype": "Table",
+   "label": "Additional Address",
+   "options": "Additional Supplier Addresses"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-12-29 13:58:27.122420",
+ "modified": "2024-01-02 11:39:36.437325",
  "modified_by": "Administrator",
  "module": "Mdm Vendor Registration",
  "name": "Supplier Company Details",
