@@ -10,7 +10,8 @@ def send_sms(to):
     account_sid=twilio_details.account_sid
     auth_token=twilio_details.auth_token
     twilio_phone_number=twilio_details.twilio_phone_number
-   
+    twilio_api_url=twilio_details.twilio_api_url+f'/{account_sid}/Messages.json'
+    print(twilio_api_url,"Twilio")
     otp_length = 6
     otp = "".join([f"{random.randint(0, 9)}" for _ in range(otp_length)])
     headers = {
@@ -24,8 +25,10 @@ def send_sms(to):
     auth = (account_sid, auth_token)
 
     response = requests.post(twilio_api_url, headers=headers, data=data, auth=auth)
+    print(response)
 
     if response.status_code == 201:
+        print(otp)
         frappe.msgprint(f"SMS sent: {response.json().get('sid')}")
         return {"OTP":otp}
     else:
