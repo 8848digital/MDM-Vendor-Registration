@@ -212,3 +212,6 @@ app_license = "MIT"
 #	"mdm_vendor_registration.auth.validate"
 # ]
 
+fixtures = [
+    "MDM Settings",
+]
