@@ -33,7 +33,10 @@
   "tds_traces_apis_section",
   "fetch_and_set_tds_withholding_rates_automatically",
   "enable_bulk_sending_of_tds_certificates",
-  "fetch_status_of_tds_returns_filings"
+  "fetch_status_of_tds_returns_filings",
+  "supplier_sign_up_settings_tab",
+  "create_suppliers_via_invite_only",
+  "supplier_invitation_email_template"
  ],
  "fields": [
   {
@@ -187,12 +190,28 @@
    "fieldname": "fetch_status_of_tds_returns_filings",
    "fieldtype": "Check",
    "label": "Fetch Status of TDS Returns filings "
+  },
+  {
+   "fieldname": "supplier_sign_up_settings_tab",
+   "fieldtype": "Tab Break",
+   "label": "Supplier Sign up settings"
+  },
+  {
+   "default": "0",
+   "fieldname": "create_suppliers_via_invite_only",
+   "fieldtype": "Check",
+   "label": "Create Suppliers via invite only"
+  },
+  {
+   "fieldname": "supplier_invitation_email_template",
+   "fieldtype": "Text Editor",
+   "label": "Supplier Invitation Email Template"
   }
  ],
  "index_web_pages_for_search": 1,
  "issingle": 1,
  "links": [],
- "modified": "2023-12-26 16:48:12.372555",
+ "modified": "2024-01-03 14:43:25.556792",
  "modified_by": "Administrator",
  "module": "Mdm Vendor Registration",
  "name": "MDM Settings",
