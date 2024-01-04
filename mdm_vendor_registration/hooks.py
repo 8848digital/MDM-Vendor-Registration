@@ -214,4 +214,5 @@ app_license = "MIT"
 
 fixtures = [
     "MDM Settings",
+    "Website Settings",
 ]
