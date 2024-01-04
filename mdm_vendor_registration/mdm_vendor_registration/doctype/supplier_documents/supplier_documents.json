@@ -1,0 +1,47 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-01-03 19:10:07.806232",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "document_type",
+  "name_of_the_document",
+  "attach_document_here"
+ ],
+ "fields": [
+  {
+   "fieldname": "document_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Document Type",
+   "options": "GSTIN Certificate\nPAN Certificate\nCertificate of Incorporation\nISO Certification\nCMMI Certification\nOther Document"
+  },
+  {
+   "depends_on": "eval:doc.document_type == \"Other Document\"",
+   "fieldname": "name_of_the_document",
+   "fieldtype": "Data",
+   "in_standard_filter": 1,
+   "label": "Name of the Document"
+  },
+  {
+   "fieldname": "attach_document_here",
+   "fieldtype": "Attach",
+   "in_list_view": 1,
+   "label": "Attach Document Here"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2024-01-03 19:15:42.501278",
+ "modified_by": "Administrator",
+ "module": "Mdm Vendor Registration",
+ "name": "Supplier Documents",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

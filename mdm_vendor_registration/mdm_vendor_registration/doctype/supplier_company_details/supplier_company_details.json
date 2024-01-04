@@ -60,7 +60,16 @@
   "country",
   "address_verified",
   "additional_addresses_tab",
-  "additional_address"
+  "additional_address",
+  "categorisation_of_supplier_tab",
+  "supplier_category",
+  "subcategory_of_supplier",
+  "bank_details_tab",
+  "i_am_authorized_to_add_bank_details_for_my_company",
+  "bank_name",
+  "column_break_nozg",
+  "supplier_documentation_tab",
+  "table_bpch"
  ],
  "fields": [
   {
@@ -351,11 +360,60 @@
    "fieldtype": "Table",
    "label": "Additional Address",
    "options": "Additional Supplier Addresses"
+  },
+  {
+   "fieldname": "categorisation_of_supplier_tab",
+   "fieldtype": "Tab Break",
+   "label": "Categorisation of Supplier"
+  },
+  {
+   "fieldname": "subcategory_of_supplier",
+   "fieldtype": "Table MultiSelect",
+   "label": "Subcategory of Supplier",
+   "options": "Subcategory of Supplier"
+  },
+  {
+   "description": "This is your primary category. This will be set inside Supplier Group in ERPNext.",
+   "fieldname": "supplier_category",
+   "fieldtype": "Link",
+   "label": "Supplier Category",
+   "options": "Supplier Category"
+  },
+  {
+   "fieldname": "bank_details_tab",
+   "fieldtype": "Tab Break",
+   "label": "Bank Details"
+  },
+  {
+   "default": "0",
+   "fieldname": "i_am_authorized_to_add_bank_details_for_my_company",
+   "fieldtype": "Check",
+   "label": "I am authorized to add Bank details for my company"
+  },
+  {
+   "fieldname": "bank_name",
+   "fieldtype": "Link",
+   "label": "Bank Name",
+   "options": "Bank"
+  },
+  {
+   "fieldname": "column_break_nozg",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "supplier_documentation_tab",
+   "fieldtype": "Tab Break",
+   "label": "Supplier Documentation"
+  },
+  {
+   "fieldname": "table_bpch",
+   "fieldtype": "Table",
+   "options": "Supplier Documents"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-01-02 11:39:36.437325",
+ "modified": "2024-01-03 19:13:34.996787",
  "modified_by": "Administrator",
  "module": "Mdm Vendor Registration",
  "name": "Supplier Company Details",
