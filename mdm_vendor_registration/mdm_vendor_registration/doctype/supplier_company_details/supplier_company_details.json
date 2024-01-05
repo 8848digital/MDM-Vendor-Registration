@@ -67,6 +67,7 @@
   "bank_details_tab",
   "i_am_authorized_to_add_bank_details_for_my_company",
   "bank_name",
+  "account_type",
   "column_break_nozg",
   "supplier_documentation_tab",
   "table_bpch"
@@ -382,7 +383,7 @@
   {
    "fieldname": "bank_details_tab",
    "fieldtype": "Tab Break",
-   "label": "Bank Details"
+   "label": "Primary Bank Details"
   },
   {
    "default": "0",
@@ -409,11 +410,17 @@
    "fieldname": "table_bpch",
    "fieldtype": "Table",
    "options": "Supplier Documents"
+  },
+  {
+   "fieldname": "account_type",
+   "fieldtype": "Link",
+   "label": "Account Type",
+   "options": "Bank Account Type"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-01-03 19:13:34.996787",
+ "modified": "2024-01-05 14:16:04.519597",
  "modified_by": "Administrator",
  "module": "Mdm Vendor Registration",
  "name": "Supplier Company Details",
