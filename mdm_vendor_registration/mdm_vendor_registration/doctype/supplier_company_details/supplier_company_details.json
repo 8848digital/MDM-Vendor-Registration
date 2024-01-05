@@ -35,7 +35,6 @@
   "name_of_the_company_fetched_as_per_pan",
   "column_break_kuxns",
   "persons_name",
-  "llp_number",
   "gst_details_tab",
   "gst_details",
   "gst_applicable",
@@ -163,7 +162,7 @@
    "fieldname": "company_type_as_per_pan",
    "fieldtype": "Select",
    "label": "Company Type as per PAN",
-   "options": "Individual\nCompany\nHUF\nGovernment"
+   "options": "Individual\nCompany\nHUF\nGovernment\nFirm"
   },
   {
    "default": "0",
@@ -180,11 +179,6 @@
    "fieldname": "persons_name",
    "fieldtype": "Data",
    "label": "Person's Name "
-  },
-  {
-   "fieldname": "llp_number",
-   "fieldtype": "Data",
-   "label": "LLP Number "
   },
   {
    "fieldname": "gst_details",
@@ -413,7 +407,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-01-03 19:13:34.996787",
+ "modified": "2024-01-05 10:11:59.279343",
  "modified_by": "Administrator",
  "module": "Mdm Vendor Registration",
  "name": "Supplier Company Details",
