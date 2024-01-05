@@ -39,10 +39,12 @@
   "gst_details_tab",
   "gst_details",
   "gst_applicable",
+  "name_of_business",
   "gst_number",
   "verified_gst_number",
   "gst_category",
   "gst_valid_from",
+  "gstn_status",
   "regd_address_as_per_gstin",
   "regd_email_as_per_gstin",
   "regd_phone_number_as_per_gstin",
@@ -214,7 +216,7 @@
   },
   {
    "fieldname": "regd_address_as_per_gstin",
-   "fieldtype": "Data",
+   "fieldtype": "HTML",
    "label": "Regd. Address as per GSTIN"
   },
   {
@@ -409,11 +411,22 @@
    "fieldname": "table_bpch",
    "fieldtype": "Table",
    "options": "Supplier Documents"
+  },
+  {
+   "fieldname": "name_of_business",
+   "fieldtype": "Data",
+   "label": "Name of Business"
+  },
+  {
+   "fieldname": "gstn_status",
+   "fieldtype": "Select",
+   "label": "GSTN Status",
+   "options": "Active\nInactive"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-01-03 19:13:34.996787",
+ "modified": "2024-01-05 10:30:27.726983",
  "modified_by": "Administrator",
  "module": "Mdm Vendor Registration",
  "name": "Supplier Company Details",
