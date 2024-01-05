@@ -14,8 +14,6 @@ $('.custom-btn').on('click', function(event) {
 		callback: function(response) {
 			var fetchCompanyNameBasedOnPan = response.message;
 			if (fetchCompanyNameBasedOnPan == 1) {
-				frappe.web_form.set_value('pan_verified',1);
-
 				var pan_number = frappe.web_form.get_value('pan_number');
 				if (pan_number) {
 					frappe.call({
@@ -24,14 +22,12 @@ $('.custom-btn').on('click', function(event) {
 							pan_number: pan_number
 						},
 						callback: function(response) {
-							console.log(response.message)
 							if (response.message === false) {
 								frappe.msgprint("PAN number not valid");
 							} 
 							else {
 								var data= response.message.data;
-							
-							
+								frappe.web_form.set_value('pan_verified',1);
 								frappe.web_form.set_value('persons_name', data.full_name);
 								frappe.web_form.set_value('company_type_as_per_pan', data.category);
 							}
@@ -48,5 +44,6 @@ $('.custom-btn').on('click', function(event) {
 		}
 	});
 });
+
 
 });

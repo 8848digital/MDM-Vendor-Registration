@@ -6,11 +6,15 @@ import requests
 
 @frappe.whitelist(allow_guest=True)
 def send_sms(to):
-    twilio_details=frappe.get_doc('Twilio Sms Settings')
-    account_sid=twilio_details.account_sid
-    auth_token=twilio_details.auth_token
-    twilio_phone_number=twilio_details.twilio_phone_number
-    twilio_api_url=twilio_details.twilio_api_url+f'/{account_sid}/Messages.json'
+    settings=frappe.get_doc('MDM Settings')
+    server_url=settings.host_url
+    server_url=server_url+'Twilio Sms Settings/Twilio Sms Settings'
+    response1 = requests.get(server_url)
+    data = response1.json()['data']
+    account_sid=data['account_sid']
+    auth_token=data['auth_token']
+    twilio_phone_number=data['twilio_phone_number']
+    twilio_api_url=data['twilio_api_url']+f'/{account_sid}/Messages.json'
     otp_length = 6
     otp = "".join([f"{random.randint(0, 9)}" for _ in range(otp_length)])
     headers = {
@@ -24,10 +28,8 @@ def send_sms(to):
     auth = (account_sid, auth_token)
 
     response = requests.post(twilio_api_url, headers=headers, data=data, auth=auth)
-    print(response)
 
     if response.status_code == 201:
-        print(otp)
         frappe.msgprint(f"SMS sent: {response.json().get('sid')}")
         return {"OTP":otp}
     else:

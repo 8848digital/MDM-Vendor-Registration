@@ -19,13 +19,17 @@ def isValidPanCardNo(panCardNo):
 @frappe.whitelist(allow_guest=True)
 def get_data(pan_number):
 	val = isValidPanCardNo(pan_number)
-	if val:
-		sandbox_settings=frappe.get_doc('Sandbox Settings')
-		url=sandbox_settings.auth_url+"kyc/pan"
-		x_api_key=sandbox_settings.x_api_key
-		x_api_secret=sandbox_settings.x_api_secret
-		x_api_version=sandbox_settings.x_api_version
-		access_token = get_access_token(x_api_key, x_api_secret,sandbox_settings.auth_url,x_api_version)
+	if val==True:
+		settings=frappe.get_doc('MDM Settings')
+		server_url=settings.host_url
+		server_url=server_url+'Sandbox Settings/Sandbox Settings'
+		response1 = requests.get(server_url)
+		data = response1.json()['data']
+		url=data['auth_url']+"kyc/pan"
+		x_api_key=data['x_api_key']
+		x_api_secret= data['x_api_secret']
+		x_api_version=data['x_api_version']
+		access_token = get_access_token(x_api_key, x_api_secret,data['auth_url'],x_api_version)
 		headers = {
             'Authorization': access_token['access_token'],
             'accept': 'application/json',
@@ -40,6 +44,8 @@ def get_data(pan_number):
 			}
 		response = requests.post(url, json=data, headers=headers)
 		return response.json()
+	else:
+		return False
 
 @frappe.whitelist(allow_guest=True)
 def get_check():
