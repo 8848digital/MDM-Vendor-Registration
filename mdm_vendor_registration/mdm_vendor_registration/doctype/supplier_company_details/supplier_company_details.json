@@ -66,7 +66,14 @@
   "bank_details_tab",
   "i_am_authorized_to_add_bank_details_for_my_company",
   "bank_name",
+  "account_type",
+  "ifsc_code",
+  "ifsc_information",
+  "branch_code",
+  "bank_account_number",
   "column_break_nozg",
+  "vpa_code",
+  "auto_fetch_bank_account_details",
   "supplier_documentation_tab",
   "table_bpch"
  ],
@@ -376,7 +383,7 @@
   {
    "fieldname": "bank_details_tab",
    "fieldtype": "Tab Break",
-   "label": "Bank Details"
+   "label": "Primary Bank Details"
   },
   {
    "default": "0",
@@ -403,6 +410,42 @@
    "fieldname": "table_bpch",
    "fieldtype": "Table",
    "options": "Supplier Documents"
+  },
+  {
+   "fieldname": "account_type",
+   "fieldtype": "Link",
+   "label": "Account Type",
+   "options": "Bank Account Type"
+  },
+  {
+   "fieldname": "ifsc_code",
+   "fieldtype": "Data",
+   "label": "IFSC Code"
+  },
+  {
+   "fieldname": "ifsc_information",
+   "fieldtype": "Data",
+   "label": "IFSC Information"
+  },
+  {
+   "fieldname": "branch_code",
+   "fieldtype": "Data",
+   "label": "Branch Code"
+  },
+  {
+   "fieldname": "bank_account_number",
+   "fieldtype": "Data",
+   "label": "Bank Account Number"
+  },
+  {
+   "fieldname": "vpa_code",
+   "fieldtype": "Data",
+   "label": "VPA code"
+  },
+  {
+   "fieldname": "auto_fetch_bank_account_details",
+   "fieldtype": "Button",
+   "label": "Auto Fetch Bank Account Details"
   }
  ],
  "index_web_pages_for_search": 1,
