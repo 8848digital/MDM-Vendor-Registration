@@ -11,7 +11,6 @@ def send_sms(to):
     auth_token=twilio_details.auth_token
     twilio_phone_number=twilio_details.twilio_phone_number
     twilio_api_url=twilio_details.twilio_api_url+f'/{account_sid}/Messages.json'
-    print(twilio_api_url,"Twilio")
     otp_length = 6
     otp = "".join([f"{random.randint(0, 9)}" for _ in range(otp_length)])
     headers = {
@@ -37,7 +36,6 @@ def send_sms(to):
 @frappe.whitelist(allow_guest=True)
 def send_otp(email):
     verify_email= "^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$"
-    print("email",email)
     if re.match(verify_email,email):
         data=generate_otp(email)
         return data

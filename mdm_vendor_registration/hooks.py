@@ -34,7 +34,7 @@ app_license = "MIT"
 # Home Pages
 # ----------
 # application home page (will override Website Settings)
-#home_page = "signup"
+#   home_page = "signup"
 
 # website user home page (by Role)
 # role_home_page = {
@@ -214,4 +214,5 @@ app_license = "MIT"
 
 fixtures = [
     "MDM Settings",
+    "Website Settings",
 ]

@@ -1,0 +1,63 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-01-03 17:49:54.212740",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_b3iw",
+  "auth_url",
+  "x_api_key",
+  "x_api_secret",
+  "x_api_version"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_b3iw",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "auth_url",
+   "fieldtype": "Data",
+   "label": "Auth URL"
+  },
+  {
+   "fieldname": "x_api_key",
+   "fieldtype": "Data",
+   "label": "X API Key"
+  },
+  {
+   "fieldname": "x_api_secret",
+   "fieldtype": "Data",
+   "label": "X API Secret"
+  },
+  {
+   "fieldname": "x_api_version",
+   "fieldtype": "Data",
+   "label": "X API Version"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "issingle": 1,
+ "links": [],
+ "modified": "2024-01-03 17:53:37.110720",
+ "modified_by": "Administrator",
+ "module": "Mdm Vendor Registration",
+ "name": "Sandbox Settings",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
