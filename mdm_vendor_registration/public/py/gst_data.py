@@ -8,10 +8,8 @@ from .access_token import get_access_token
 def get_gst_data(gst_number):
     val = isValidGST(gst_number)
     mdm_setting_doc = frappe.get_doc("MDM Settings")
-    
     if val:
         sandbox_settings=frappe.get_doc('Sandbox Settings')
-        
         url=sandbox_settings.auth_url+f"gsp/public/gstin/{gst_number}"
         
         x_api_key=sandbox_settings.x_api_key
@@ -25,10 +23,9 @@ def get_gst_data(gst_number):
             'x-api-version': x_api_version
         }
         response = requests.request("GET", url, headers=headers)
-        print({"setting": mdm_setting_doc, "response" : response.json()})
         return {"setting": mdm_setting_doc, "response" : response.json()}
     else:
-        return frappe.throw("Not a Valid GST Number")
+        return frappe.throw("Please Enter a Valid GST Number")
     
 
 def isValidGST(gst_number):

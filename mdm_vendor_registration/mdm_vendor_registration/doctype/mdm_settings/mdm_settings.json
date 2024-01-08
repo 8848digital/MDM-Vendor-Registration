@@ -9,7 +9,8 @@
  "field_order": [
   "pan_api_settings_tab",
   "pan_apis_section",
-  "validate_pan",
+  "validate_pan_from_sandbox",
+  "validate_pan_from_transbank",
   "fetch_company_name_based_on_pan",
   "fetch_party_type_based_on_pan",
   "gstin_api_settings_tab",
@@ -48,12 +49,6 @@
    "fieldname": "pan_apis_section",
    "fieldtype": "Section Break",
    "label": "PAN APIs"
-  },
-  {
-   "default": "0",
-   "fieldname": "validate_pan",
-   "fieldtype": "Check",
-   "label": "Validate PAN"
   },
   {
    "default": "0",
@@ -206,12 +201,24 @@
    "fieldname": "supplier_invitation_email_template",
    "fieldtype": "Text Editor",
    "label": "Supplier Invitation Email Template"
+  },
+  {
+   "default": "0",
+   "fieldname": "validate_pan_from_sandbox",
+   "fieldtype": "Check",
+   "label": "Validate PAN from Sandbox"
+  },
+  {
+   "default": "0",
+   "fieldname": "validate_pan_from_transbank",
+   "fieldtype": "Check",
+   "label": "Validate Pan from TransBank"
   }
  ],
  "index_web_pages_for_search": 1,
  "issingle": 1,
  "links": [],
- "modified": "2024-01-03 14:43:25.556792",
+ "modified": "2024-01-05 14:45:57.193056",
  "modified_by": "Administrator",
  "module": "Mdm Vendor Registration",
  "name": "MDM Settings",

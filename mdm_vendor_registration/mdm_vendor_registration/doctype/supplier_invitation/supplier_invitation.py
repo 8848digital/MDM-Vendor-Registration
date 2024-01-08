@@ -7,13 +7,11 @@ from frappe.model.document import Document
 class SupplierInvitation(Document):
 	pass
 
-# def on_save():
-#     pass
-
 @frappe.whitelist(allow_guest=True)
 def send_inv_to_email(username):
-    data = send_mail("Email Invitation", [username], {'email': username})
-    print("generate otp    ",data)
+    key=3
+    encrypted_email = ''.join([chr(ord(char) + key) for char in username])
+    data = send_mail("Email Invitation", [username], {'email': encrypted_email})
     return data
 
 

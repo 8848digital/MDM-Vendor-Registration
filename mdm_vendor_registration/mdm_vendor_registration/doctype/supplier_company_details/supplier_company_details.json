@@ -60,6 +60,8 @@
   "pincode",
   "country",
   "address_verified",
+  "section_break_dlco",
+  "address_html",
   "additional_addresses_tab",
   "additional_address",
   "categorisation_of_supplier_tab",
@@ -201,7 +203,7 @@
    "fieldname": "gst_category",
    "fieldtype": "Select",
    "label": "GST Category",
-   "options": "Select\nRegistered Regular\nUnregistered\nSEZ\nGovernment"
+   "options": "Select\nRegular\nUnregistered\nSEZ\nGovernment"
   },
   {
    "fieldname": "gst_valid_from",
@@ -210,7 +212,7 @@
   },
   {
    "fieldname": "regd_address_as_per_gstin",
-   "fieldtype": "HTML",
+   "fieldtype": "Data",
    "label": "Regd. Address as per GSTIN"
   },
   {
@@ -416,11 +418,21 @@
    "fieldtype": "Select",
    "label": "GSTN Status",
    "options": "Active\nInactive"
+  },
+  {
+   "fieldname": "section_break_dlco",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "address_html",
+   "fieldtype": "HTML",
+   "label": "Address HTML",
+   "options": "<h1>{{gst_number}}</h1>"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-01-05 10:11:59.279343",
+ "modified": "2024-01-08 13:11:12.428255",
  "modified_by": "Administrator",
  "module": "Mdm Vendor Registration",
  "name": "Supplier Company Details",
