@@ -1,0 +1,52 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-01-08 14:02:25.330958",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "title",
+  "api_key_of_the_destination_site",
+  "api_secret_of_the_destination_erpnext_site",
+  "response_endpoint"
+ ],
+ "fields": [
+  {
+   "allow_in_quick_entry": 1,
+   "fieldname": "title",
+   "fieldtype": "Data",
+   "label": "URL of the ERPNext site to Sync"
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "fieldname": "api_key_of_the_destination_site",
+   "fieldtype": "Data",
+   "label": "API Key Of the Destination Site "
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "fieldname": "api_secret_of_the_destination_erpnext_site",
+   "fieldtype": "Data",
+   "label": "API Secret Of the Destination ERPNext Site"
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "fieldname": "response_endpoint",
+   "fieldtype": "Data",
+   "label": "Response Endpoint"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2024-01-08 14:04:38.031913",
+ "modified_by": "Administrator",
+ "module": "Mdm Vendor Registration",
+ "name": "Sites to Sync Supplier Master",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
