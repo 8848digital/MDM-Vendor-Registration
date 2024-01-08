@@ -3,7 +3,7 @@ import re
 import json 
 import random
 import requests
-
+from .logs import response_logger 
 @frappe.whitelist(allow_guest=True)
 def send_sms(to):
     settings=frappe.get_doc('MDM Settings')
@@ -28,7 +28,11 @@ def send_sms(to):
     auth = (account_sid, auth_token)
 
     response = requests.post(twilio_api_url, headers=headers, data=data, auth=auth)
+    
+    site_name='demo.com'
+    user_name=frappe.session.user
 
+    response_logger("Twilio Sms Log",'Twilio Sms Log',site_name,user_name,data,"Twilio Api",headers, response)
     if response.status_code == 201:
         frappe.msgprint(f"SMS sent: {response.json().get('sid')}")
         return {"OTP":otp}

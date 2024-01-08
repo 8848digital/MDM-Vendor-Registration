@@ -3,7 +3,8 @@ import re
 import requests
 import json
 from frappe import _
-from .access_token import get_access_token 
+from .access_token import get_access_token
+from .logs import response_logger 
 
 @frappe.whitelist(allow_guest=True)
 def isValidPanCardNo(panCardNo):
@@ -42,7 +43,11 @@ def get_data(pan_number):
             "consent": "y",
             "reason": "For Validation"
 			}
+		user_name=frappe.session.user
+		site_name='demo_com'
 		response = requests.post(url, json=data, headers=headers)
+		response_logger("Pan Verfication",'Sandbox Api Log',site_name,user_name,data,"Pan",headers, response)
+		
 		return response.json()
 	else:
 		return False
