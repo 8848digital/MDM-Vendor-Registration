@@ -9,7 +9,8 @@
  "field_order": [
   "pan_api_settings_tab",
   "pan_apis_section",
-  "validate_pan",
+  "validate_pan_from_sandbox",
+  "validate_pan_from_transbank",
   "fetch_company_name_based_on_pan",
   "fetch_party_type_based_on_pan",
   "validate_using_transbank_api",
@@ -52,12 +53,6 @@
    "fieldname": "pan_apis_section",
    "fieldtype": "Section Break",
    "label": "PAN APIs"
-  },
-  {
-   "default": "0",
-   "fieldname": "validate_pan",
-   "fieldtype": "Check",
-   "label": "Validate PAN"
   },
   {
    "default": "0",
@@ -214,9 +209,15 @@
   },
   {
    "default": "0",
-   "fieldname": "validate_using_transbank_api",
+   "fieldname": "validate_pan_from_sandbox",
    "fieldtype": "Check",
-   "label": "Validate using Transbank Api"
+   "label": "Validate PAN from Sandbox"
+  },
+  {
+   "default": "0",
+   "fieldname": "validate_pan_from_transbank",
+   "fieldtype": "Check",
+   "label": "Validate Pan from TransBank"
   },
   {
    "fieldname": "host_url",
@@ -238,7 +239,11 @@
  "index_web_pages_for_search": 1,
  "issingle": 1,
  "links": [],
+<<<<<<< HEAD
  "modified": "2024-01-08 15:47:17.206543",
+=======
+ "modified": "2024-01-05 14:45:57.193056",
+>>>>>>> d2e95a99e6547fb2ec03972b5291e722d0222ace
  "modified_by": "Administrator",
  "module": "Mdm Vendor Registration",
  "name": "MDM Settings",
