@@ -38,7 +38,9 @@
   "fetch_status_of_tds_returns_filings",
   "supplier_sign_up_settings_tab",
   "create_suppliers_via_invite_only",
-  "supplier_invitation_email_template"
+  "supplier_invitation_email_template",
+  "sync_settings_tab",
+  "sites_to_sync_supplier_master"
  ],
  "fields": [
   {
@@ -219,12 +221,23 @@
    "fieldname": "host_url",
    "fieldtype": "Data",
    "label": "Host Url"
+  },
+  {
+   "fieldname": "sync_settings_tab",
+   "fieldtype": "Tab Break",
+   "label": "Sync Settings"
+  },
+  {
+   "fieldname": "sites_to_sync_supplier_master",
+   "fieldtype": "Table",
+   "label": "Sites to Sync Supplier Master",
+   "options": "Sites to Sync Supplier Master"
   }
  ],
  "index_web_pages_for_search": 1,
  "issingle": 1,
  "links": [],
- "modified": "2024-01-05 14:12:35.445288",
+ "modified": "2024-01-08 14:05:30.062514",
  "modified_by": "Administrator",
  "module": "Mdm Vendor Registration",
  "name": "MDM Settings",
