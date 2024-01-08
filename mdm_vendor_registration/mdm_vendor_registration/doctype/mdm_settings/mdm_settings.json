@@ -39,7 +39,9 @@
   "fetch_status_of_tds_returns_filings",
   "supplier_sign_up_settings_tab",
   "create_suppliers_via_invite_only",
-  "supplier_invitation_email_template"
+  "supplier_invitation_email_template",
+  "sync_settings_tab",
+  "sites_to_sync_supplier_master"
  ],
  "fields": [
   {
@@ -133,8 +135,9 @@
    "label": "Fetch Party Based on CIN"
   },
   {
+   "default": "0",
    "fieldname": "fetch_date_of_incorporation_based_on_cin",
-   "fieldtype": "Data",
+   "fieldtype": "Check",
    "label": "Fetch Date of Incorporation based on CIN"
   },
   {
@@ -220,12 +223,27 @@
    "fieldname": "host_url",
    "fieldtype": "Data",
    "label": "Host Url"
+  },
+  {
+   "fieldname": "sync_settings_tab",
+   "fieldtype": "Tab Break",
+   "label": "Sync Settings"
+  },
+  {
+   "fieldname": "sites_to_sync_supplier_master",
+   "fieldtype": "Table",
+   "label": "Sites to Sync Supplier Master",
+   "options": "Sites to Sync Supplier Master"
   }
  ],
  "index_web_pages_for_search": 1,
  "issingle": 1,
  "links": [],
+<<<<<<< HEAD
+ "modified": "2024-01-08 15:47:17.206543",
+=======
  "modified": "2024-01-05 14:45:57.193056",
+>>>>>>> d2e95a99e6547fb2ec03972b5291e722d0222ace
  "modified_by": "Administrator",
  "module": "Mdm Vendor Registration",
  "name": "MDM Settings",
