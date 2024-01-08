@@ -17,5 +17,5 @@ def response_logger(doc_type, doc_name, site_name, user_name, payload, api, head
     }
     settings=frappe.get_doc('MDM Settings')
     server_url=settings.host_url
-    api_url = server_url+'Sandbox Api Log'
+    api_url = server_url+'Sandbox API Log'
     post_response = requests.post(api_url, json=post_data)
