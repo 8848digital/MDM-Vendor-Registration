@@ -1,5 +1,7 @@
 import frappe
 import requests
+import json
+from .logs import response_logger 
 @frappe.whitelist(allow_guest=True)
 def get_access_token(x_api_key, x_api_secret,url,x_api_version):
 	try:
@@ -18,3 +20,5 @@ def get_access_token(x_api_key, x_api_secret,url,x_api_version):
 		return {'status': 'success', 'access_token': access_token}
 	except Exception as e:
 		return {'status': 'error', 'message': str(e)}
+	
+
