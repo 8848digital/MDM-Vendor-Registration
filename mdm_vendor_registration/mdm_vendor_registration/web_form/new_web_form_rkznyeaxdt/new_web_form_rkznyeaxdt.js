@@ -20,6 +20,7 @@ frappe.ready(function() {
 	
 					if(from_sandbox){
 						if(settings.fetch_company_name_based_on_pan == 1){
+							frappe.web_form.set_value('pan_verified',1);
 							frappe.web_form.set_value('persons_name', pan_data.full_name);
 							frappe.web_form.set_value('company_type_as_per_pan', pan_data.category);
 						}
@@ -29,6 +30,7 @@ frappe.ready(function() {
 							if (pan_data.data.category === 'person') {
 									var category = 'Individual';
 								}
+							frappe.web_form.set_value('pan_verified',1);
 							frappe.web_form.set_value('persons_name', pan_data.data.full_name);
 							frappe.web_form.set_value('company_type_as_per_pan', category);
 						}

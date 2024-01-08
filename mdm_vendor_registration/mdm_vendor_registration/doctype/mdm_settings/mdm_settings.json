@@ -13,6 +13,8 @@
   "validate_pan_from_transbank",
   "fetch_company_name_based_on_pan",
   "fetch_party_type_based_on_pan",
+  "validate_using_transbank_api",
+  "host_url",
   "gstin_api_settings_tab",
   "gstin_apis_section",
   "validate_gst_number",
@@ -213,6 +215,11 @@
    "fieldname": "validate_pan_from_transbank",
    "fieldtype": "Check",
    "label": "Validate Pan from TransBank"
+  },
+  {
+   "fieldname": "host_url",
+   "fieldtype": "Data",
+   "label": "Host Url"
   }
  ],
  "index_web_pages_for_search": 1,
