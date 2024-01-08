@@ -140,8 +140,9 @@
    "label": "Fetch Party Based on CIN"
   },
   {
+   "default": "0",
    "fieldname": "fetch_date_of_incorporation_based_on_cin",
-   "fieldtype": "Data",
+   "fieldtype": "Check",
    "label": "Fetch Date of Incorporation based on CIN"
   },
   {
@@ -237,7 +238,7 @@
  "index_web_pages_for_search": 1,
  "issingle": 1,
  "links": [],
- "modified": "2024-01-08 14:05:30.062514",
+ "modified": "2024-01-08 15:47:17.206543",
  "modified_by": "Administrator",
  "module": "Mdm Vendor Registration",
  "name": "MDM Settings",
