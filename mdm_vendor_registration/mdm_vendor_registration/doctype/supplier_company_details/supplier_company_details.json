@@ -40,6 +40,7 @@
   "gst_applicable",
   "name_of_business",
   "gst_number",
+  "gst_verified",
   "verified_gst_number",
   "gst_category",
   "gst_valid_from",
@@ -471,11 +472,17 @@
    "fieldname": "auto_fetch_bank_account_details",
    "fieldtype": "Button",
    "label": "Auto Fetch Bank Account Details"
+  },
+  {
+   "default": "0",
+   "fieldname": "gst_verified",
+   "fieldtype": "Check",
+   "label": "GST Verified"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-01-08 13:11:12.428255",
+ "modified": "2024-01-08 16:08:46.546822",
  "modified_by": "Administrator",
  "module": "Mdm Vendor Registration",
  "name": "Supplier Company Details",

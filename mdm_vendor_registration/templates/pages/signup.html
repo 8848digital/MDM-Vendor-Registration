@@ -142,15 +142,6 @@
 
 {% block script %}
 <script>
-  let key = 3;  
-  let decryptedEmail = '';
-  const urlParams = new URLSearchParams(window.location.search);
-  const emailParam = urlParams.get('email');
-  for (let i = 0; i < emailParam.length; i++) {
-      decryptedEmail += String.fromCharCode(emailParam.charCodeAt(i) - key);
-  }
-  $('#email').val(decryptedEmail).prop('readonly', true);
-
   var emailotp='';
   var phoneotp='';
   var flag=false;
