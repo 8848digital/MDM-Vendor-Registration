@@ -13,11 +13,11 @@
   "validate_pan_from_transbank",
   "fetch_company_name_based_on_pan",
   "fetch_party_type_based_on_pan",
-  "validate_using_transbank_api",
   "host_url",
   "gstin_api_settings_tab",
   "gstin_apis_section",
-  "validate_gst_number",
+  "validate_gst_from_sandbox",
+  "validate_gst_from_transbank",
   "fetch_pan_based_on_gst_number",
   "fetch_party_name_based_on_gstin",
   "fetch_address_based_on_gstin",
@@ -73,12 +73,6 @@
    "fieldname": "gstin_apis_section",
    "fieldtype": "Section Break",
    "label": "GSTIN APIs"
-  },
-  {
-   "default": "0",
-   "fieldname": "validate_gst_number",
-   "fieldtype": "Check",
-   "label": "Validate GST Number"
   },
   {
    "default": "0",
@@ -220,12 +214,24 @@
    "fieldname": "host_url",
    "fieldtype": "Data",
    "label": "Host Url"
+  },
+  {
+   "default": "0",
+   "fieldname": "validate_gst_from_sandbox",
+   "fieldtype": "Check",
+   "label": "Validate GST from Sandbox"
+  },
+  {
+   "default": "0",
+   "fieldname": "validate_gst_from_transbank",
+   "fieldtype": "Check",
+   "label": "Validate GST from Transbank"
   }
  ],
  "index_web_pages_for_search": 1,
  "issingle": 1,
  "links": [],
- "modified": "2024-01-05 14:45:57.193056",
+ "modified": "2024-01-08 17:32:39.390686",
  "modified_by": "Administrator",
  "module": "Mdm Vendor Registration",
  "name": "MDM Settings",
