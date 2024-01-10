@@ -38,13 +38,10 @@
   "gst_details_tab",
   "gst_details",
   "gst_applicable",
-  "name_of_business",
   "gst_number",
-  "gst_verified",
   "verified_gst_number",
   "gst_category",
   "gst_valid_from",
-  "gstn_status",
   "regd_address_as_per_gstin",
   "regd_email_as_per_gstin",
   "regd_phone_number_as_per_gstin",
@@ -61,8 +58,6 @@
   "pincode",
   "country",
   "address_verified",
-  "section_break_dlco",
-  "address_html",
   "additional_addresses_tab",
   "additional_address",
   "categorisation_of_supplier_tab",
@@ -211,7 +206,7 @@
    "fieldname": "gst_category",
    "fieldtype": "Select",
    "label": "GST Category",
-   "options": "Select\nRegular\nUnregistered\nSEZ\nGovernment"
+   "options": "Select\nRegistered Regular\nUnregistered\nSEZ\nGovernment"
   },
   {
    "fieldname": "gst_valid_from",
@@ -417,27 +412,6 @@
    "options": "Supplier Documents"
   },
   {
-   "fieldname": "name_of_business",
-   "fieldtype": "Data",
-   "label": "Name of Business"
-  },
-  {
-   "fieldname": "gstn_status",
-   "fieldtype": "Select",
-   "label": "GSTN Status",
-   "options": "Active\nInactive"
-  },
-  {
-   "fieldname": "section_break_dlco",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "address_html",
-   "fieldtype": "HTML",
-   "label": "Address HTML",
-   "options": "<h1>{{gst_number}}</h1>"
-  },
-  {
    "fieldname": "account_type",
    "fieldtype": "Link",
    "label": "Account Type",
@@ -472,17 +446,11 @@
    "fieldname": "auto_fetch_bank_account_details",
    "fieldtype": "Button",
    "label": "Auto Fetch Bank Account Details"
-  },
-  {
-   "default": "0",
-   "fieldname": "gst_verified",
-   "fieldtype": "Check",
-   "label": "GST Verified"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-01-08 16:08:46.546822",
+ "modified": "2024-01-09 13:49:15.526851",
  "modified_by": "Administrator",
  "module": "Mdm Vendor Registration",
  "name": "Supplier Company Details",

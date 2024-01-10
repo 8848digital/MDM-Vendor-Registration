@@ -165,4 +165,43 @@ frappe.ready(function() {
 			frappe.throw("GST Number must be Entered")
 		}
 	});
+	var cinbtn = $('<button class="cinbtn btn btn-default" style="font-size: small;margin-left:10px; padding-left: 5px; padding-right: 5px;">Verify Cin</button>');
+	var cin = $('.control-label:contains("Company Registration Number")');
+	var labelContainer = cin.parent();
+	labelContainer.append(cinbtn);
+	$('.cinbtn').on('click',function(event){
+		event.preventDefault();
+		var cin_number = frappe.web_form.get_value('company_registration_number');
+		console.log(cin_number);
+		frappe.call({
+			method: 'mdm_vendor_registration.public.py.cin_data.get_data',
+			args: {
+				cin_number: cin_number
+			},
+			callback(response){
+				var data=response.message.result.data.company_master_data;
+				console.log(data)
+				if (data.class_of_company=='Private'){
+					frappe.web_form.set_value('company_type','Private Limited')
+				}
+				var inputdate="01/08/2012";
+				console.log(inputdate)
+				var dateParts = inputdate.split("/");
+				console.log(dateParts)
+				var inputDate = new Date(dateParts[2], dateParts[1] - 1, dateParts[0]);
+				var day = inputDate.getDate().toString().padStart(2, '0');
+				var month = (inputDate.getMonth() + 1).toString().padStart(2, '0');
+				var year = inputDate.getFullYear();
+				console.log(day,month,year)
+				var formattedDateString = `${day}-${month}-${year}`;
+				console.log(formattedDateString)
+				frappe.web_form.set_value('date_of_establishment',formattedDateString)
+				frappe.web_form.set_value('Company Name',data.company_llp_name)
+				var x=frappe.web_form.get_value('company_type')
+				console.log("ffsff",x)
+
+			}
+		})
+	})
+
 });
