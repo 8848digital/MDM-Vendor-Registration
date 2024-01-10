@@ -9,4 +9,4 @@ def register_user(email,name,mobile_no,new_password):
     doc.first_name=name
     doc.mobile_no=mobile_no
     doc.new_password=new_password
-    doc.save()
+    doc.insert(ignore_permissions=True)

@@ -13,11 +13,11 @@
   "validate_pan_from_transbank",
   "fetch_company_name_based_on_pan",
   "fetch_party_type_based_on_pan",
-  "validate_using_transbank_api",
   "host_url",
   "gstin_api_settings_tab",
   "gstin_apis_section",
-  "validate_gst_number",
+  "validate_gst_from_sandbox",
+  "validate_gst_from_transbank",
   "fetch_pan_based_on_gst_number",
   "fetch_party_name_based_on_gstin",
   "fetch_address_based_on_gstin",
@@ -39,7 +39,9 @@
   "fetch_status_of_tds_returns_filings",
   "supplier_sign_up_settings_tab",
   "create_suppliers_via_invite_only",
-  "supplier_invitation_email_template"
+  "supplier_invitation_email_template",
+  "sync_settings_tab",
+  "sites_to_sync_supplier_master"
  ],
  "fields": [
   {
@@ -73,12 +75,6 @@
    "fieldname": "gstin_apis_section",
    "fieldtype": "Section Break",
    "label": "GSTIN APIs"
-  },
-  {
-   "default": "0",
-   "fieldname": "validate_gst_number",
-   "fieldtype": "Check",
-   "label": "Validate GST Number"
   },
   {
    "default": "0",
@@ -133,8 +129,9 @@
    "label": "Fetch Party Based on CIN"
   },
   {
+   "default": "0",
    "fieldname": "fetch_date_of_incorporation_based_on_cin",
-   "fieldtype": "Data",
+   "fieldtype": "Check",
    "label": "Fetch Date of Incorporation based on CIN"
   },
   {
@@ -220,12 +217,35 @@
    "fieldname": "host_url",
    "fieldtype": "Data",
    "label": "Host Url"
+  },
+  {
+   "default": "0",
+   "fieldname": "validate_gst_from_sandbox",
+   "fieldtype": "Check",
+   "label": "Validate GST from Sandbox"
+  },
+  {
+   "default": "0",
+   "fieldname": "validate_gst_from_transbank",
+   "fieldtype": "Check",
+   "label": "Validate GST from Transbank"
+  },
+  {
+   "fieldname": "sync_settings_tab",
+   "fieldtype": "Tab Break",
+   "label": "Sync Settings"
+  },
+  {
+   "fieldname": "sites_to_sync_supplier_master",
+   "fieldtype": "Table",
+   "label": "Sites to Sync Supplier Master",
+   "options": "Sites to Sync Supplier Master"
   }
  ],
  "index_web_pages_for_search": 1,
  "issingle": 1,
  "links": [],
- "modified": "2024-01-05 14:45:57.193056",
+ "modified": "2024-01-08 17:32:39.390686",
  "modified_by": "Administrator",
  "module": "Mdm Vendor Registration",
  "name": "MDM Settings",
