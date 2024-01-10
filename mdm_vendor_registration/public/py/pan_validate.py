@@ -70,14 +70,6 @@ def get_data(pan_number):
 
 @frappe.whitelist()
 def get_pan_data_from_sandbox(pan_number):
-    # sandbox_settings=frappe.get_doc('MDM Settings')
-    # server_url=settings.host_url
-    # server_url=server_url+'Sandbox Settings/Sandbox Settings'
-    # x_api_key=sandbox_settings.x_api_key
-    # x_api_secret=sandbox_settings.x_api_secret
-    # x_api_version=sandbox_settings.x_api_version
-    # access_token = get_access_token(x_api_key, x_api_secret,sandbox_settings.auth_url,x_api_version)
-    
     
     settings=frappe.get_doc('MDM Settings')
     server_url=settings.host_url

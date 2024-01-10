@@ -1,0 +1,95 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:{customer_name}",
+ "creation": "2024-01-09 13:52:25.186445",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_zo0y",
+  "customer_name",
+  "sms_provider",
+  "account_sid",
+  "auth_token",
+  "twilio_phone_number",
+  "twilio_api_url"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_zo0y",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "sms_provider",
+   "fieldtype": "Link",
+   "label": "Sms Provider",
+   "options": "SMS Provider"
+  },
+  {
+   "depends_on": "eval:doc.sms_provider=='Twilio'",
+   "fieldname": "account_sid",
+   "fieldtype": "Data",
+   "label": "Account Sid"
+  },
+  {
+   "depends_on": "eval:doc.sms_provider=='Twilio'",
+   "fieldname": "auth_token",
+   "fieldtype": "Data",
+   "label": "Auth Token"
+  },
+  {
+   "depends_on": "eval:doc.sms_provider=='Twilio'",
+   "fieldname": "twilio_phone_number",
+   "fieldtype": "Data",
+   "label": "Twilio Phone Number"
+  },
+  {
+   "depends_on": "eval:doc.sms_provider=='Twilio'",
+   "fieldname": "twilio_api_url",
+   "fieldtype": "Data",
+   "label": "Twilio Api Url"
+  },
+  {
+   "fieldname": "customer_name",
+   "fieldtype": "Data",
+   "label": "Customer Name"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-01-10 12:03:27.572561",
+ "modified_by": "Administrator",
+ "module": "Mdm Vendor Registration",
+ "name": "SMS Gateway Provider",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Guest",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
